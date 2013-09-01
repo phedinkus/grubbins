@@ -1,4 +1,5 @@
 Grubbins::Application.routes.draw do
+  resources :lists
   resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.

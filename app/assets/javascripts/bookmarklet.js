@@ -1,0 +1,1 @@
+javascript:(function()%7Bvar ingNodes=document.getElementsByClassName("ingredient");var ings="";for(var i = ingNodes.length - 1; i >= 0; i--){ings+=ingNodes[i].textContent+"/n"};window.open("http://localhost:8000/lists?ingredients="+ings,'Grub List','height=800,width=600');%7D)();

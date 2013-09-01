@@ -1,0 +1,8 @@
+%h1 the list
+%ul
+	- @ingredients.each do |ingredient|
+		%li
+			%span.amount= ingredient.amount
+			%span.unit= ingredient.unit
+			%span.ingredient= ingredient.ingredient
+
