@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require items
+//= require angular
+//= require angular-resource
+//= require app

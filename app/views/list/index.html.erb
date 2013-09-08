@@ -1,0 +1,14 @@
+<div class='container list'>
+  <div ng-controller='RecipeCtrl' ng-init='init(<%= @ingredients.to_json %>)'>
+    <div class='list-new'>
+      <h1>ingredients found</h1>
+      <ingredient addFn="addToList"></ingredient>
+    </div>
+  </div>
+  <div ng-controller='ListCtrl'>
+    <div class='list-existing'>
+      <h1>the list</h1>
+      <shopping-list-item items="getItems()"></shopping-list-item>
+    </div>
+  </div>
+</div>
