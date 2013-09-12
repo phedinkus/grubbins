@@ -1,18 +1,30 @@
-body {
+body, input, button {
 	font-family: 'SofiaProBold', "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 
-.list {
-	button.add-ingredient {
-		border: none;
+button {
+	border: none;
+	padding: 5px 10px 0 10px;
+	line-height: 20px;
+	font-weight: bold;
+	&:hover {
+		cursor: pointer;
+	}
+	&.add-ingredient {
 		background: aquamarine;
-		padding: 5px 10px 0 10px;
-		line-height: 20px;
-		font-weight: bold;
+	}
+	&.remove {
+		background: none;
+		font-size: 18px;
+		margin-left: 10px;
 		&:hover {
-			cursor: pointer;
+			background: lightgray;
 		}
 	}
+}
+
+.list {
+
 	input {
 		border: none;
 		border-bottom: 1px dashed #aaa;

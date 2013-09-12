@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828233842) do
+ActiveRecord::Schema.define(version: 20130909020940) do
 
   create_table "items", force: true do |t|
     t.string   "content"
-    t.integer  "quantity"
+    t.float    "quantity"
     t.string   "measurement"
     t.datetime "created_at"
     t.datetime "updated_at"

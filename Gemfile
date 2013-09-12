@@ -7,8 +7,8 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 
 gem 'omniauth-twitter'
-gem 'ingreedy'
-
+gem 'ingreedy', git: "git@github.com:phedinkus/ingreedy.git", branch: "master"
+gem 'nokogiri'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'haml'

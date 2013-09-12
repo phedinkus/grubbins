@@ -11,11 +11,13 @@ grubbinsApp.service "ListService", ["$resource", ($resource) ->
     getItems: ->
       items
     addItem: (newItem) ->
-      item = Item.save(newItem)
-      items.push item
+      item = Item.save newItem, ->
+        items.push item
     # TODO: add this functionality
-    removeItem: ->
+    removeItem: (oldItem) ->
+      oldItem.$delete ->
 
+      
   }]
 
 grubbinsApp.directive "ingredient", ->
@@ -36,11 +38,15 @@ grubbinsApp.directive "ingredient", ->
   }
 
 grubbinsApp.directive "shoppingListItem", ->
+  removeElement = angular.element "<button ng-click='ondelete({item: item, index: $index})' class='remove'>&times;</button>"
   {
     restrict: "E"
     replace: true
+    compile: (tElem) ->
+      tElem.append(removeElement)
     scope: 
       items: "="
+      ondelete: "&"
     template: "<div class='item' ng-repeat='item in items'>" +
                 "<span class='quantity'>{{item.quantity}} </span>" +
                 "<span class='measurement'>{{item.measurement}} </span>" +
@@ -52,12 +58,13 @@ grubbinsApp.directive "shoppingListItem", ->
 grubbinsApp.controller("RecipeCtrl", ["$scope", "ListService", ($scope, ListService) ->
   $scope.init = (newItems) ->
     $scope.ingredients = newItems
-    console.log $scope.ingredients
   $scope.addToList = (ingredient)->
     ListService.addItem ingredient
-    console.log ListService.getItems()
 ])
 
 grubbinsApp.controller 'ListCtrl', ($scope, ListService) ->
   $scope.getItems = ->
     ListService.getItems()
+  $scope.deleteItem = (item, idx) ->
+    console.log "removing item: %o, index: %o", item, idx
+    ListService.removeItem(item, idx)

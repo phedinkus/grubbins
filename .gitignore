@@ -18,3 +18,5 @@ doc/
 .DS_Store
 *.orig
 /config/twitter.yml
+
+bin/*
