@@ -13,11 +13,11 @@ grubbinsApp.service "ListService", ["$resource", ($resource) ->
     addItem: (newItem) ->
       item = Item.save newItem, ->
         items.push item
-    # TODO: add this functionality
+        newItem._added = true
     removeItem: (oldItem) ->
-      oldItem.$delete ->
-
-      
+      index = items.indexOf(oldItem)
+      oldItem.$delete()
+      items.splice index, 1
   }]
 
 grubbinsApp.directive "ingredient", ->
@@ -29,10 +29,10 @@ grubbinsApp.directive "ingredient", ->
     replace: true
     compile: (tElem) ->
       tElem.prepend(buttonElement)
-    template: "<form ng-repeat='ingredient in ingredients'>" + 
-                "<input class='quantity' name='quantity' ng-model='ingredient.quantity' type='text'>" + 
-                "<input class='measurement' name='measurement' ng-model='ingredient.measurement' type='text'>" + 
-                "<input class='content' name='content' ng-model='ingredient.content' type='text'>" + 
+    template: "<form ng-repeat='ingredient in ingredients'>" +
+                "<input class='quantity' name='quantity' ng-model='ingredient.quantity' type='text'>" +
+                "<input class='measurement' name='measurement' ng-model='ingredient.measurement' type='text'>" +
+                "<input class='content' name='content' ng-model='ingredient.content' type='text'>" +
               "</form>"
 
   }
@@ -44,7 +44,7 @@ grubbinsApp.directive "shoppingListItem", ->
     replace: true
     compile: (tElem) ->
       tElem.append(removeElement)
-    scope: 
+    scope:
       items: "="
       ondelete: "&"
     template: "<div class='item' ng-repeat='item in items'>" +
@@ -65,6 +65,5 @@ grubbinsApp.controller("RecipeCtrl", ["$scope", "ListService", ($scope, ListServ
 grubbinsApp.controller 'ListCtrl', ($scope, ListService) ->
   $scope.getItems = ->
     ListService.getItems()
-  $scope.deleteItem = (item, idx) ->
-    console.log "removing item: %o, index: %o", item, idx
-    ListService.removeItem(item, idx)
+  $scope.deleteItem = (item) ->
+    ListService.removeItem(item)
