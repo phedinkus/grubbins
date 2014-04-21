@@ -7,8 +7,8 @@
   </div>
   <div ng-controller='ListCtrl'>
     <div class='list-existing'>
-      <h1>the list</h1>
-      <shopping-list-item items="getItems()" ondelete="deleteItem(item, $index)"></shopping-list-item>
+      <h1>your shopping list</h1>
+      <shopping-list-item ng-repeat="item in items" item="item" ondelete="deleteItem(item, $index)"></shopping-list-item>
     </div>
   </div>
 </div>

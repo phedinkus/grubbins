@@ -1,6 +1,8 @@
+require 'recipe_parser'
+
 class ListController < ApplicationController
-  include RecipeParser
   def index
-  	@ingredients = RecipeParser.parse_site(params[:recipe_page_url])
+  	recipe = RecipeParser.new(params[:recipe_page_url])
+  	@ingredients = recipe.ingredients
   end
 end

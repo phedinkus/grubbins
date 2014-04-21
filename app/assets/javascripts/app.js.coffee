@@ -29,6 +29,7 @@ grubbinsApp.directive "ingredient", ->
     replace: true
     compile: (tElem) ->
       tElem.prepend(buttonElement)
+    # TODO: move to templateUrl
     template: "<form ng-repeat='ingredient in ingredients'>" +
                 "<input class='quantity' name='quantity' ng-model='ingredient.quantity' type='text'>" +
                 "<input class='measurement' name='measurement' ng-model='ingredient.measurement' type='text'>" +
@@ -36,7 +37,7 @@ grubbinsApp.directive "ingredient", ->
               "</form>"
 
   }
-
+# TODO: why isn't this just one item? Move the ng-repeat to the shopppinglist directive
 grubbinsApp.directive "shoppingListItem", ->
   removeElement = angular.element "<button ng-click='ondelete({item: item, index: $index})' class='remove'>&times;</button>"
   {
@@ -45,9 +46,11 @@ grubbinsApp.directive "shoppingListItem", ->
     compile: (tElem) ->
       tElem.append(removeElement)
     scope:
-      items: "="
+      # items: "="
+      item: "="
       ondelete: "&"
-    template: "<div class='item' ng-repeat='item in items'>" +
+    template: "<div class='item' ng-class='{strike: item.obtained}'>" +
+                "<input type='checkbox' ng-model='item.obtained'>" +
                 "<span class='quantity'>{{item.quantity}} </span>" +
                 "<span class='measurement'>{{item.measurement}} </span>" +
                 "<span class='content'>{{item.content}}</span>" +
@@ -63,6 +66,7 @@ grubbinsApp.controller("RecipeCtrl", ["$scope", "ListService", ($scope, ListServ
 ])
 
 grubbinsApp.controller 'ListCtrl', ($scope, ListService) ->
+  $scope.items = ListService.getItems()
   $scope.getItems = ->
     ListService.getItems()
   $scope.deleteItem = (item) ->

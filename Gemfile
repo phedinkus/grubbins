@@ -7,7 +7,7 @@ gem 'rails', '4.0.0'
 gem 'sqlite3'
 
 gem 'omniauth-twitter'
-gem 'ingreedy', git: "git@github.com:phedinkus/ingreedy.git", branch: "master"
+gem 'ingreedy', path: "../ingreedy" #git: "git@github.com:phedinkus/ingreedy.git", branch: "master"
 gem 'nokogiri'
 
 gem 'sass-rails', '~> 4.0.0'
@@ -22,6 +22,8 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'annotate', ">=2.6.0"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -38,4 +40,4 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'debugger', group: [:development, :test]
