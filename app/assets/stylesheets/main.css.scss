@@ -10,8 +10,14 @@ button {
 	&:hover {
 		cursor: pointer;
 	}
+	&:focus {
+		outline: none;
+	}
 	&.add-ingredient {
 		background: aquamarine;
+		&:hover {
+			background: rgb(255, 214, 0);
+		}
 	}
 	&.remove {
 		background: none;

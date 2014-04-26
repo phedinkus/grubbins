@@ -1,8 +1,7 @@
 require "open-uri"
 
 class RecipeParser
-  attr_reader :ingredients
-  attr_accessor :title, :html_dom, :ingredients, :url, :uri
+  attr_reader :ingredients, :title, :html_dom, :url, :uri
 
   def initialize(recipe_url)
     @url = recipe_url
@@ -14,7 +13,7 @@ class RecipeParser
 
 
   def get_html
-    Nokogiri::HTML(open(self.uri.to_s).read, nil, 'utf-8')
+    Nokogiri::HTML(open(uri.to_s).read, nil, 'utf-8')
   end
 
   def parse_title

@@ -13,12 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20130921155915) do
 
-  create_table "items", force: true do |t|
+  create_table "ingredients", force: true do |t|
     t.string   "content"
     t.float    "quantity"
     t.string   "measurement"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "recipe_id"
+    t.string   "original_content"
+    t.string   "container"
+    t.string   "prep_method"
   end
 
   create_table "recipes", force: true do |t|
