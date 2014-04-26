@@ -1,0 +1,447 @@
+.SumaPanel {
+	border: 1px #FFD675 solid;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	min-height: 4em;
+	max-width: 500px;
+	font-size: 10pt;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fffefc;
+}
+
+a.SumaPostContent,a.SumaPostContent:visited {
+	border: 1px #ffdb9d solid;
+	padding: 0.9em;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	display: block;
+	text-align: center;
+	min-width: 90%;
+	color: #0077ff;
+	background-color: #fffefc;
+	font-size: 10pt;
+	font-weight: normal;
+}
+
+a.SumaPostContent:hover {
+	color: #0077ff;
+	text-decoration: underline;
+	background-color: #fffefc;
+}
+
+a.SumaBox:hover {
+	
+}
+
+.SumaSignUpTitle {
+	border: 0px #FFD675 solid;
+	text-align: center;
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-variant: small-caps;
+	padding-top: 0.5em;
+	background-color: #FFD675;
+  	color: #111;
+}
+
+.SumaSignUpTitleSubHead {
+	border: 0px #FFD675 solid;
+	text-align: center;
+	font-size: 10pt;
+	background-color: #FFD675;
+	padding-bottom: 0.5em;
+	font-style: normal;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	color: #222;
+}
+
+#SumaSignUpBar {
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 9pt;
+	margin-bottom: 15px;
+  	background-color: #fffefc;
+  	color: #0077ff;
+	padding-right: 1ex;
+	padding-left: 2ex;
+}
+
+#SumaSignUpBar .left,#SumaSignUpBar .right {
+	border-bottom: 1px #f7b536 solid;
+	background-color: #fff7bb;
+}
+
+#SumaSignUpBar .current {
+	font-weight: bold;
+	border-left: 1px #f7b536 solid;
+	border-right: 1px #f7b536 solid;
+	border-top: 1px #f7b536 solid;
+	background-color: #fffefc;
+	color: #222;
+}
+
+#SumaSignUpBar .future {
+	border: 1px #f7b536 solid;
+	background-color: #eeeeee;
+	color: #222;
+}
+
+#SumaSignUpBar .completed {
+	border: 1px #f7b536 solid;
+	background-color: #eeeeee;
+	color: #222;
+}
+
+.SumaFormErrors {
+	clear: left;
+	color: red;
+	text-align: center;
+}
+
+a.SumaLink,a.SumaLink:visited {
+	color: #0077ff;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-decoration: none;
+}
+
+a.SumaLink:hover {
+	text-decoration: underline;
+}
+
+fieldset.Suma {
+	border: none;
+	display: block;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+legend.Suma {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	text-transform: none;
+	color: #dc9c2f;
+	text-align: left;
+}
+/*
+ * Container for Labels and SumaFieldSetItems, as well as SumaInputButtons, etc.
+ */
+.SumaFieldSetRow {
+	display: block;
+	margin: 0 auto;
+	line-height: normal;
+	text-align: center;
+	padding-top: 5px;
+	color: #0077ff;
+}
+/*
+ * For example: The text of the user-supplied Username, email, etc during Step-3 Confirm Order.
+ */
+br.SumaClear {
+	clear: both;
+	line-height: 0px;
+}
+
+label.Suma {
+	float: left;
+	/*display: block;*/
+	margin-bottom: 0.1em;
+	padding-right: 10px;
+	width: 40%;
+	font-weight: bold;
+	text-align: right;
+	font-size: 10pt;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	vertical-align: bottom;
+	color: #2E2E30;
+}
+
+.SumaFieldSetItem {
+	float: left;
+	display: block;
+	width: 55%;
+	padding-left: 5px;
+	text-align: left;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10pt;
+	line-height: normal;
+	color: #111;
+}
+
+a.SumaFormTip,a.SumaFormTip:visited {
+	color: #0077ff;
+	float: left;
+	font-weight: normal;
+	text-align: left;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 0.8em;
+	text-decoration: none;
+}
+
+a.SumaFormTip:hover {
+	text-decoration: underline;
+}  /*
+ * Used as an inline-block substitute for Firefox deficiencies
+ */
+table.Suma {
+	border: 0;
+}
+
+table.SumaTabularData {
+	border-collapse: collapse;
+	display: table;
+}
+
+td.SumaTabularHeader {
+	color: #222;
+	font-weight: bold;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10pt;
+	padding: 5px;
+}
+
+tr.SumaLightBG {
+	background-color: #f1f1f1;
+}
+
+tr.SumaDarkBG {
+	background-color: #bcf0e5;
+}
+
+td.SumaTabularData {
+	color: #222;
+	padding: 5px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10pt;
+}
+
+.SumaWarning {
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+p.SumaCCVExplanation {
+	text-align: justify;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	color: navy;
+	margin-left: 1em;
+	margin-right: 1em;
+	font-size: 10pt;
+	font-weight: normal;
+	margin-top: 1em;
+}
+
+input.SumaInputField {
+	border: 1px #7a8dba solid;
+	padding: 2px;
+	float: left;
+	margin-right: 5px;
+	color: black;
+}
+
+input.SumaInputField:disabled {
+	color: gray;
+}
+
+input.SumaLoginField {
+	border: 1px #7a8dba solid;
+	padding: 2px;
+}
+
+input.SumaLoginFieldHighlighted {
+	border: 1px red solid;
+	padding: 2px;
+}
+
+input.SumaInputButton {
+	margin: 2px;
+}
+
+.SumaPlanDisplay,.SumaLicenseDisplay {
+	float: left;
+	display: block;
+	width: 80%;
+	margin-right: 5px;
+	text-align: left;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	font-style: normal;
+	font-weight: normal;
+	color: #111;
+}
+
+.SumaPlanTitle {
+	font-weight: bold;
+}
+
+input.SumaInputRadio {
+	float: left;
+	display: block;
+	width: 30px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+input.SumaInputRadioInline {
+	float: left;
+	display: inline;
+}
+
+select.Suma {
+	border: 1px #7a8dba solid;
+	cursor: pointer;
+	float: left;
+	max-width: 40%;
+	min-width: 7em;
+	margin-right: 5px;
+}
+
+select.SumaN6 {
+	border: 1px #7a8dba solid;
+	cursor: pointer;
+	float: left;
+	max-width: 6em;
+	min-width: 4em;
+	margin-right: 5px;
+}
+
+select.SumaN4 {
+	border: 1px #7a8dba solid;
+	cursor: pointer;
+	float: left;
+	max-width: 4em;
+	min-width: 2em;
+	margin-right: 5px;
+}
+
+
+select.SumaN {
+	border: 1px #7a8dba solid;
+	cursor: pointer;
+	float: left;
+	width: 70px;
+	margin-right: 5px;
+}
+
+select.SumaS {
+	border: 1px #7a8dba solid;
+	cursor: pointer;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	padding: 2px;
+	float: left;
+	width: 40%;
+}
+
+.SumaRemarks {
+	clear: left;
+	font-size: 0.8em;
+}
+
+.SumaPowered {
+	font-size: 0.0em;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-align: center;
+	margin: 0 auto;
+	color: inactivecaptiontext;
+}
+
+a.SumaPowered,a.SumaPowered:visited {
+	text-decoration: none;
+}
+
+a.SumaPowered:hover {
+	text-decoration: underline;
+}
+
+.SumaCustService {
+	color: #1c1c33;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	text-align: center;
+	margin: 0 auto;
+}
+
+a.SumaCustService,a.SumaCustService:visited {
+	color: #0077ff;
+	margin: 0 auto;
+	text-decoration: none;
+}
+
+a.SumaCustService:hover {
+	text-decoration: underline;
+}
+
+a.SumaLogin,a.SumaLogin:visited {
+	color: #0077ff;
+	text-decoration: none;
+}
+
+a.SumaLogin:hover {
+	text-decoration: underline;
+}
+
+.SumaLoginError {
+	color: red;
+}
+
+.SumaLogFatal,.SumaLogError,.SumaLogWarning,.SumaLogInfo,.SumaLogDebug {
+	
+}
+
+.SumaLogFatal {
+	background-color: #ff7373;
+}
+
+.SumaLogError {
+	background-color: #ffa87d;
+}
+
+.SumaLogWarning {
+	background-color: #fffc70;
+}
+
+.SumaLogInfo {
+	
+}
+
+.SumaLogDebug {
+	background-color: #d6fcff;
+}
+
+table.logDetails {
+	text-align: center;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 11px;
+	color: #fff;
+	width: 280px;
+	background-color: #f8f8f8;
+	border: 0px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+table.logDetails td {
+	background-color: #f7f7f7;
+	color: #000;
+	padding: 4px;
+	text-align: left;
+	border: 1px #fff solid;
+}
+
+table.logDetails td.hed {
+	background-color: #666;
+	color: #fff;
+	padding: 4px;
+	text-align: left;
+	border-bottom: 2px #fff solid;
+	font-size: 12px;
+	font-weight: bold;
+}

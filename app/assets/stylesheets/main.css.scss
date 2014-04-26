@@ -10,8 +10,14 @@ button {
 	&:hover {
 		cursor: pointer;
 	}
+	&:focus {
+		outline: none;
+	}
 	&.add-ingredient {
 		background: aquamarine;
+		&:hover {
+			background: rgb(255, 214, 0);
+		}
 	}
 	&.remove {
 		background: none;
@@ -24,7 +30,6 @@ button {
 }
 
 .list {
-
 	input {
 		border: none;
 		border-bottom: 1px dashed #aaa;
@@ -33,6 +38,9 @@ button {
 		line-height: 20px;
 		padding: 5px 5px 0 5px;
 		margin-bottom: 8px;
+		&[type='checkbox'] {
+			margin-right: 10px;
+		}
 		&:focus {
 			outline: none;
 		}
@@ -51,5 +59,8 @@ button {
 	}
 	.empty {
 		font-style: italic;
+	}
+	.strike {
+		text-decoration: line-through;
 	}
 }

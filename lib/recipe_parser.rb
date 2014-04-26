@@ -1,24 +1,43 @@
 require "open-uri"
 
-module RecipeParser
-  class << self
-    def parse_site(recipe_url)
-      url = URI recipe_url
-      doc = Nokogiri::HTML(open(url.to_s))
-      case url.host
-      when "www.paleoplan.com"
-        raw_ingredients = doc.css("#ingredients ul").children.map { |li| li.text }
-        parse_ingredients raw_ingredients
-      when "www.epicurious.com"
-        raw_ingredients = doc.css(".ingredient").map { |li| li.text }
-        parse_ingredients raw_ingredients
-      end
-    end
+class RecipeParser
+  attr_reader :ingredients, :title, :html_dom, :url, :uri
 
-    def parse_ingredients(raw_ingredients)
-      raw_ingredients.map do |i|
-        parsed = Ingreedy.parse i
-        { content: parsed.ingredient, quantity: parsed.amount == 0 ? nil : parsed.amount, measurement: parsed.unit }
+  def initialize(recipe_url)
+    @url = recipe_url
+    @uri = URI.parse recipe_url
+    @html_dom = get_html
+    @title = parse_title
+    @ingredients = parse_ingredients
+  end
+
+
+  def get_html
+    Nokogiri::HTML(open(uri.to_s).read, nil, 'utf-8')
+  end
+
+  def parse_title
+    self.html_dom.css("title").text || "Unknown Title"
+  end
+
+  def parse_ingredients
+    case self.uri.host
+    when "www.paleoplan.com"
+      raw_ingredients = self.html_dom.css("#ingredients ul li").map { |li| li.text }
+    when "www.epicurious.com"
+      raw_ingredients = self.html_dom.css(".ingredient").map { |li| li.text }
+    end
+    raw_ingredients.map do |i|
+      parsed = Ingreedy.parse i
+
+      unless parsed.ingredient.empty?
+        {
+          ingredient_string: parsed.query,
+          content:      parsed.ingredient,
+          quantity:     parsed.amount == 0 ? nil : parsed.amount,
+          measurement:  parsed.unit,
+          recipe:       { url: self.url, title: self.title }
+        }
       end
     end
   end

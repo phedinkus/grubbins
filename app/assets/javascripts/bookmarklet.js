@@ -1,1 +1,1 @@
-javascript:(function()%7Bwindow.open("http://localhost:8000/?recipe_page_url="+window.location.href,'Grub List','height=800,width=600');%7D)();
+javascript:(function()%7Bwindow.open("http://localhost:8000/?recipe_page_url="+window.location.href+"&title="+document.getElementByTagName('title')[0].text,'Grub List','height=800,width=600');%7D)();
